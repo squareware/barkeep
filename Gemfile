@@ -71,19 +71,22 @@ gem "therubyracer"
 # For scripting system setup.
 gem "terraform"
 
-gem "nokogiri"
-gem "fezzik"
+# For LDAP signins
+gem "net-ldap"
 
 group :test do
   # NOTE(caleb): require rr >= 1.0.3 and scope >= 0.2.3 for mutual compatibility
   gem "rr", ">= 1.0.3"
   gem "scope", ">= 0.2.3"
   gem "rack-test"
+  gem "nokogiri"
   gem "pry"
 end
 
 group :development do
+  gem "fezzik"
   gem "pry"
   gem "awesome_print"
+  gem "vagrant", "~> 1.0.5" # For testing deployments
   gem "statusz" # For the deploy information status page
 end
